@@ -74,6 +74,24 @@ class Woocommerce_Lightspeed_Integration_Public {
 	public function enqueue_scripts() {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/woocommerce-lightspeed-integration-public.js', array( 'jquery' ), $this->version, false );
 
+		$data = $this->get_localize_data();
+		wp_localize_script( $this->plugin_name, 'WLSIVars', $data );
+	}
+
+	/**
+	 * Get the localized data for JavaScript.
+	 *
+	 * @return array Localized data.
+	 */
+	public function get_localize_data() {
+		$data = array(
+			'ajaxurl'      => esc_url( admin_url( 'admin-ajax.php' ) ),
+			'siteURL'      => site_url(),
+			'_ajax_nonce'  => wp_create_nonce( 'woocommerce_lightspeed_integration_nonce' ),
+			'err_msg1'     => __( 'Something went wrong!', 'woocommerce-lightspeed-integration' ),
+		);
+
+		return $data;
 	}
 
 	// Shortcode to display stock levels by location (only South Melbourne, Melbourne Warehouse, and North Parramatta)
@@ -83,7 +101,7 @@ class Woocommerce_Lightspeed_Integration_Public {
 	    // Get the Lightspeed Product ID from WooCommerce product meta
 	    $lightspeed_product_id = get_post_meta( $product->get_id(), '_lightspeed_product_id', true );
 	    $product_sku = $product->get_sku();
-	    
+
 	    if ( ! empty( $product_sku ) ) {
             // Get the API key and set up Lightspeed API
             $api_key = get_option( 'wc_lightspeed_api_key' );
@@ -137,7 +155,6 @@ class Woocommerce_Lightspeed_Integration_Public {
 	    ?>
 	    <div class="stock-levels-div">
 	        <h4><?php esc_html_e( 'Stock levels by location', 'wc-lightspeed' ); ?></h4>
-	        
 	        <div class="stock-levels">
 	            <?php
 	            // Loop through each inventory outlet and display stock levels for specific locations

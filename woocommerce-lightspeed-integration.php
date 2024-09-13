@@ -64,6 +64,22 @@ register_deactivation_hook( __FILE__, 'deactivate_woocommerce_lightspeed_integra
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-woocommerce-lightspeed-integration.php';
 
+function woocommerce_lightspeed_integration_require_dependency() {
+    
+    // Check if WooCommerce is enabled
+    if ( file_exists( ABSPATH . 'wp-admin/includes/plugin.php' ) ){
+        include_once ( ABSPATH . 'wp-admin/includes/plugin.php' );
+    }
+
+    if ( ! class_exists( 'WooCommerce' ) ) {
+        unset($_GET['activate']);  //unset this to hide default Plugin activated. notice
+        deactivate_plugins( plugin_basename( __FILE__ ) , true );
+        $class = 'notice is-dismissible error notice-rating';
+        $message = __( 'WooCommerce Lightspeed Integration Addon requires <a href="https://www.woocommerce.com">WooCommerce</a> plugin to be activated.', 'woocommerce-lightspeed-integration' );
+        printf( "<div id='message' class='%s'> <p>%s</p></div>", $class, $message );
+    }
+}
+
 /**
  * Begins execution of the plugin.
  *
@@ -73,10 +89,21 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-woocommerce-lightspeed-int
  *
  * @since    1.0.0
  */
-function run_woocommerce_lightspeed_integration() {
+function run_woocommerce_lightspeed_integration_addon() {
 
-	$plugin = new Woocommerce_Lightspeed_Integration();
+	$plugin = new woocommerce_lightspeed_integration();
 	$plugin->run();
-
 }
-run_woocommerce_lightspeed_integration();
+
+function woocommerce_lightspeed_integration_load(){
+
+    if ( ! class_exists( 'WooCommerce' ) ) {
+        add_action( 'admin_notices', 'woocommerce_lightspeed_integration_require_dependency' );
+        return false;
+    } else {
+        run_woocommerce_lightspeed_integration_addon();
+    }
+}
+
+add_action( 'plugins_loaded', 'woocommerce_lightspeed_integration_load' );
+
