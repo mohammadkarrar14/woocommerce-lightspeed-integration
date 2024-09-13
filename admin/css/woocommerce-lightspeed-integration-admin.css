@@ -1,0 +1,206 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+/* Wrapper styling */
+.wc-lightspeed-settings-wrap {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 20px 0 20px 0; /* Adjusted margin for top and bottom only */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    clear: both; /* Ensures it does not float next to other elements */
+}
+
+/* Form fields layout */
+.wc-lightspeed-form-field {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+.wc-lightspeed-form-field label {
+    font-weight: 600;
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Input fields */
+.wc-lightspeed-form-field input[type="text"],
+.wc-lightspeed-form-field input[type="password"],
+.wc-lightspeed-form-field input[type="email"],
+.wc-lightspeed-form-field select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s;
+}
+
+/* Input fields focus state */
+.wc-lightspeed-form-field input:focus {
+    border-color: #0073aa;
+    outline: none;
+}
+
+/* Description text */
+.wc-lightspeed-form-field p.description {
+    font-size: 13px;
+    color: #666;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+/* Flexbox layout for message and color fields */
+.wc-lightspeed-message-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Adjust color picker size */
+.wc-lightspeed-message-wrapper .color-picker {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+}
+
+
+/* Submit button styling */
+.wp-core-ui .button-primary {
+    background: #0073aa;
+    border-color: #0073aa;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+    box-shadow: none;
+    transition: background-color 0.3s ease;
+}
+
+.wp-core-ui .button-primary:hover,
+.wp-core-ui .button-primary:focus {
+    background: #005177;
+    border-color: #005177;
+    outline: none;
+}
+
+/* Spacing and alignment */
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Centering the form */
+form {
+    margin-top: 20px;
+}
+
+
+/* Outlets page */
+
+/* Wrapper for the outlets table */
+.wc-lightspeed-outlets-wrap {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin: 20px 0 20px 0;
+    max-width: 1000px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    clear: both; /* Ensures it does not float next to other elements */
+}
+
+/* Table styles */
+.wc-lightspeed-outlets-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Table headers */
+.wc-lightspeed-outlets-table thead th {
+    background-color: #0073aa;
+    color: #fff;
+    padding: 10px 15px;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+/* Table rows */
+.wc-lightspeed-outlets-table tbody tr {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.wc-lightspeed-outlets-table tbody tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+/* Table cells */
+.wc-lightspeed-outlets-table tbody td {
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+/* Hover effect on table rows */
+.wc-lightspeed-outlets-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Style the coordinates cell */
+.wc-lightspeed-outlets-table tbody td:nth-child(8) {
+    font-family: "Courier New", Courier, monospace;
+    color: #555;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .wc-lightspeed-outlets-table thead {
+        display: none;
+    }
+
+    .wc-lightspeed-outlets-table, .wc-lightspeed-outlets-table tbody, .wc-lightspeed-outlets-table tr, .wc-lightspeed-outlets-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .wc-lightspeed-outlets-table tbody tr {
+        margin-bottom: 15px;
+    }
+
+    .wc-lightspeed-outlets-table tbody td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .wc-lightspeed-outlets-table tbody td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: calc(50% - 15px);
+        text-align: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
