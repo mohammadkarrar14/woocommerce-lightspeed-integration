@@ -1,6 +1,5 @@
 === WooCommerce Lightspeed Integration ===
-Contributors: (add wordpress.org userid's here)
-Donate link: https://imagenwebpro.com/
+Developer: https://imagenwebpro.com/
 Tags: woocommerce, lightspeed, inventory, sync, stock levels
 Requires at least: 3.0.1
 Tested up to: 6.6.2
