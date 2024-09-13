@@ -1,114 +1,76 @@
-=== Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
+=== WooCommerce Lightspeed Integration ===
+Contributors: (add wordpress.org userid's here)
 Donate link: https://imagenwebpro.com/
-Tags: comments, spam
+Tags: woocommerce, lightspeed, inventory, sync, stock levels
 Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 4.3
+Tested up to: 6.6.2
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+This plugin connects WooCommerce with Lightspeed POS to sync inventory and display stock levels across multiple outlets.
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+WooCommerce Lightspeed Integration is a custom solution that connects your WooCommerce store with Lightspeed POS, syncing product inventory from multiple outlets and displaying stock levels directly on WooCommerce product pages. It helps manage inventory more efficiently by fetching real-time stock data from Lightspeed.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
-
-A few notes about the sections above:
-
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
-
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
-
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+Key Features:
+* Sync product inventory from multiple Lightspeed outlets
+* Display real-time stock levels on WooCommerce product pages
+* Efficient inventory management with automatic data fetching from Lightspeed
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+To install the plugin, follow these steps:
 
-e.g.
-
-1. Upload `woocommerce-lightspeed-integration.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+1. Upload `woocommerce-lightspeed-integration.php` to the `/wp-content/plugins/` directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Configure your Lightspeed API settings in WooCommerce settings.
+4. Place `<?php do_action('plugin_name_hook'); ?>` in your templates where you want to display stock levels.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= How do I configure the Lightspeed API settings? =
 
-An answer to that question.
+Go to WooCommerce > Settings > Lightspeed Integration and add your API key.
 
-= What about foo bar? =
+= How often is the inventory data synced? =
 
-Answer to foo bar dilemma.
+The plugin fetches real-time inventory data when a customer views a product page. You can enable caching if required.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Inventory sync settings in WooCommerce.
+2. Stock levels displayed on a product page.
 
 == Changelog ==
 
 = 1.0 =
-* A change since the previous version.
-* Another change.
-
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
+* Initial release of the WooCommerce Lightspeed Integration plugin.
 
 == Upgrade Notice ==
 
 = 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
+This version includes the initial release. Upgrade if you're using a previous development version.
 
 == Arbitrary section ==
 
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
+You can customize the messages for stock levels (e.g., "In Stock," "Low Stock," "Out of Stock") and the corresponding color codes in the WooCommerce settings under Lightspeed Integration.
 
 == A brief Markdown Example ==
 
 Ordered list:
 
-1. Some feature
-1. Another feature
-1. Something else about the plugin
+1. Sync inventory with Lightspeed POS
+2. Display stock levels for multiple outlets
+3. Efficiently manage your WooCommerce store's stock
 
 Unordered list:
 
-* something
-* something else
-* third thing
+* Sync multiple outlets
+* Display stock on product pages
+* Customize stock messages
 
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
+For more details, visit [WooCommerce](https://woocommerce.com/) or check [Lightspeed's API Documentation][lightspeed api].
 
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+[lightspeed api]: https://developers.lightspeedhq.com/retail/
