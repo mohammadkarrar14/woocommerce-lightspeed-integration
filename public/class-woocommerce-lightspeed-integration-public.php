@@ -97,6 +97,12 @@ class Woocommerce_Lightspeed_Integration_Public {
 	// Shortcode to display stock levels by location (only South Melbourne, Melbourne Warehouse, and North Parramatta)
 	public function stock_levels_shortcode() {
 	    global $product;
+	    
+	    $product_id = $product ? $product->get_id() : null;
+
+	    if( is_null( $product_id ) ) {
+	    	return "";
+	    }
 
 	    // Get the Lightspeed Product ID from WooCommerce product meta
 	    $lightspeed_product_id = get_post_meta( $product->get_id(), '_lightspeed_product_id', true );
@@ -196,8 +202,8 @@ class Woocommerce_Lightspeed_Integration_Public {
 	            // If a location is missing, still show it with zero stock message
 	            $locations = [
 	                'South Melbourne' => '067f7b40-1ee9-11ee-f1f6-b6a5f3749595',
-	                'Melbourne Warehouse' => '067f7b40-1e4d-11ee-e36a-3bed7eb7a7d7',
 	                'North Parramatta' => '067f7b40-1ee9-11ee-f1f6-921cc1f7c19a',
+	                'Melbourne Warehouse' => '067f7b40-1e4d-11ee-e36a-3bed7eb7a7d7',
 	            ];
 
 	            foreach ( $locations as $location_name => $outlet_id ) {
