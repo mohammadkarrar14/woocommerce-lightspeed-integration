@@ -116,7 +116,7 @@ class Woocommerce_Lightspeed_Integration_Public {
                 $lightspeed_product_id = $lightspeed_product_response['data']['id'];
 
                 // Display the Lightspeed Product ID
-                echo esc_html( $lightspeed_product_id );
+                // echo esc_html( $lightspeed_product_id );
 
                 // Save the Lightspeed Product ID to WooCommerce product meta for future use
                 update_post_meta( $post_id, '_lightspeed_product_id', $lightspeed_product_id );
