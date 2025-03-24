@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://imagenwebpro.com
+ * @link              https://muhammadkarrar.com
  * @since             1.0.0
  * @package           Woocommerce_Lightspeed_Integration
  *
  * @wordpress-plugin
  * Plugin Name:       WooCommerce LightSpeed Integration
- * Plugin URI:        https://imagenwebpro.com
+ * Plugin URI:        https://muhammadkarrar.com
  * Description:       WooCommerce Lightspeed Integration is a custom solution that connects your WooCommerce store with the Lightspeed POS system. It allows you to sync product inventory from multiple Lightspeed outlets and display stock levels directly on WooCommerce product pages. This integration helps you manage inventory more efficiently by automatically fetching data from Lightspeed and keeping your WooCommerce store updated with real-time stock availability across different locations.
  * Version:           1.0.0
- * Author:            Imagen Web Pro
- * Author URI:        https://imagenwebpro.com/
+ * Author:            Muhammad Karrar
+ * Author URI:        https://muhammadkarrar.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       woocommerce-lightspeed-integration
